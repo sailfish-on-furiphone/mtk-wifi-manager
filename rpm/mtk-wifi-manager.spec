@@ -14,7 +14,7 @@ BuildRequires: libnl-devel
 WiFi manager for MediaTek WMT driver
 
 %prep
-%autosetup -p1 -n %{name}-%{version}/upstram
+%autosetup -p1 -n %{name}-%{version}/upstream
 
 %build
 %make
