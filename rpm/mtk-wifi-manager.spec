@@ -9,6 +9,7 @@ Source0:    %{name}-%{version}.tar.bz2
 BuildRequires: libhybris-devel
 BuildRequires: glib2-devel
 BuildRequires: libnl-devel
+BuildRequires: pkgconfig(systemd)
 
 %description
 WiFi manager for MediaTek WMT driver
