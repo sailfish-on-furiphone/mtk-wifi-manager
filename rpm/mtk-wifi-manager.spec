@@ -20,7 +20,7 @@ WiFi manager for MediaTek WMT driver
 make
 
 %install
-make install
+make install DESTDIR=%{buildroot}
 
 %preun
 if [ "$1" -eq 0 ]; then
