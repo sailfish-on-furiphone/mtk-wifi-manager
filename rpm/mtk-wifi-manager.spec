@@ -17,10 +17,10 @@ WiFi manager for MediaTek WMT driver
 %autosetup -p1 -n %{name}-%{version}/upstream
 
 %build
-%make
+make
 
 %install
-%make_install
+make install
 
 %preun
 if [ "$1" -eq 0 ]; then
