@@ -21,6 +21,8 @@ make
 
 %install
 make install DESTDIR=%{buildroot}
+mkdir -p %{buildroot}/%{_unitdir}/multi-user.target.wants
+ln -s ../%{name}.service %{buildroot}/%{_unitdir}/multi-user.target.wants/%{name}.service
 
 %preun
 if [ "$1" -eq 0 ]; then
@@ -37,3 +39,8 @@ systemctl reload-or-try-restart %{name}.service || :
 systemctl daemon-reload || :
 
 %files
+%{_libexecdir}/%{name}
+%{_unitdir}/%{name}.service
+%{_unitdir}/multi-user.target.wants/%{name}.service
+%{_datadir}/dbus-1/system-services/com.MediaTek.WiFiManager.service
+%{_datadir}/dbus-1/system.d/com.MediaTek.WiFiManager.conf
