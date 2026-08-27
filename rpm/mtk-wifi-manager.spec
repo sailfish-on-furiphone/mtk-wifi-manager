@@ -1,7 +1,7 @@
 Name:       mtk-wifi-manager
 Summary:    WiFi manager for MediaTek WMT driver
 Version:    1.2.0
-Release:    1
+Release:    2
 License:    LICENSE
 URL:        https://gitlab.com/mobian1/devices/eg25-manager
 Source0:    %{name}-%{version}.tar.bz2
@@ -23,6 +23,8 @@ make
 %install
 make install DESTDIR=%{buildroot}
 mkdir -p %{buildroot}/%{_unitdir}/multi-user.target.wants
+mkdir -p %{buildroot}/%{_bindir}
+cp client/mtkwifictl.py %{buildroot}/%{_bindir}/
 ln -s ../%{name}.service %{buildroot}/%{_unitdir}/multi-user.target.wants/%{name}.service
 
 %preun
@@ -45,3 +47,4 @@ systemctl daemon-reload || :
 %{_unitdir}/multi-user.target.wants/%{name}.service
 %{_datadir}/dbus-1/system-services/com.MediaTek.WiFiManager.service
 %{_datadir}/dbus-1/system.d/com.MediaTek.WiFiManager.conf
+%{_bindir}/mtkwifictl.py
