@@ -1,6 +1,6 @@
 Name:       mtk-wifi-manager
 Summary:    WiFi manager for MediaTek WMT driver
-Version:    1.1.0
+Version:    1.2.0
 Release:    1
 License:    LICENSE
 URL:        https://gitlab.com/mobian1/devices/eg25-manager
